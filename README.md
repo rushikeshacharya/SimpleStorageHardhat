@@ -1,0 +1,2 @@
+# SimpleStorageHardhat
+SimpleStorage Hardhat Template
