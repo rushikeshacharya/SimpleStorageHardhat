@@ -13,6 +13,7 @@ describe("SimpleStorage", () => {
       SimpleStorage = await ethers.getContractFactory("SimpleStorage");
       simpleStorageInstance = await SimpleStorage.deploy();
       let txObj = await simpleStorageInstance.deployTransaction.wait();
+      // console.log(txObj);
       await expect(txObj.status).to.equal(1, "Conract deployment failed");
     });
   });
@@ -20,6 +21,7 @@ describe("SimpleStorage", () => {
     it("should set a value", async () => {
       txReceipt = await simpleStorageInstance.set(9);
       res = await txReceipt.wait();
+      // console.log(res);
       assert.equal(await res.status, true, "Error");
     });
     it("should get a value ", async () => {
